@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="./favicon.png">
-    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Work+Sans:wght@200;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Work+Sans:wght@200;400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
+    <link rel="stylesheet" href="./style.css">
 
     <title>Qr Code Generator API Challenge</title>
 
 </head>
+
 <body>
     <h1 class="heading"> QR Code </h1>
 
@@ -26,28 +29,65 @@
             </header>
 
             <div>
-            <div class="setting">
-                <label for="data">Text/URL</label>
-                <span class="sub-label">Include text or a URL you want the QR code to lead to</span>
-                <input type="text" name="data" id="data" min="1" max="900">
+                <div class="setting">
+                    <label for="data">Text/URL</label>
+                    <span class="sub-label">Include text or a URL you want the QR code to lead to</span>
+                    <input type="text" name="data" id="data" min="1" max="900">
+                </div>
+
+                <div class="colors">
+                    <div class="setting">
+                        <label for="color">Main Color</label>
+                        <input type="color" id="color" value="#000000">
+                        <span class="sub-label" id="color-value">#000000</span>
+                    </div>
+
+                    <div class="setting">
+                        <label for="bg-color">Background Color</label>
+                        <input type="color" id="bg-color" value="#c7c7c7">
+                        <span class="sub-label" id="bg-color-value">#c7c7c7</span>
+                    </div>
+                </div>
+
+                <div class="setting">
+                    <label for="size">Size</label>
+                    <span class="sub-label" id="size-value">200 x 200</span>
+                    <input type="range" name="size" id="size" min="100" max="1000" value="200" step="100"/>
+                </div>
+
+
+                <div class="setting">
+                    <label for="margin">Margin</label>
+                    <span id="margin-value" class="sub-label">1px</span>
+                    <input type="range" name="margin" id="margin" min="0" max="100" value="1" step="1"/>
+                </div>
+
             </div>
 
-            <div class="colors">
-                 <div class="setting">
-                    <label for="color">Main Color</label>
-                    <input type="color" id="color" value="#000000">
-                    <span class="sub-label" id="color-value">#000000</span>
-                 </div>
-            </div>
-           
-           <div class="colors">
-                 <div class="setting">
-                    <label for="color">Background Color</label>
-                    <input type="color" id="color" value="#c7c7c7">
-                    <span class="sub-label" id="color-value">#c7c7c7</span>
-                 </div>
-            </div> 
-
+            <div class="settings">
+                <fieldset>
+                    <legend>Image Format</legend>
+                    <div>
+                        <input type="radio" name="format" id="format" value="png" checked>
+                        <label for="png">PNG</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="format" id="format" value="gif" checked>
+                        <label for="gif">GIF</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="format" id="format" value="jpeg" checked>
+                        <label for="jpeg">JPEG</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="format" id="format" value="jpg" checked>
+                        <label for="jpg">JPG</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="format" id="format" value="svg" checked>
+                        <label for="svg">SVG</label>
+                    </div>
+                </fieldset>
             </div>
 
         </section>
@@ -55,4 +95,5 @@
 
     <script src="./app.js"></script>
 </body>
+
 </html>
