@@ -7,12 +7,52 @@
 
     <link rel="icon" href="./favicon.png">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Work+Sans:wght@200;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
 
     <title>Qr Code Generator API Challenge</title>
 
 </head>
 <body>
+    <h1 class="heading"> QR Code </h1>
+
+    <main>
+        <section id="qr-code-settings" class="container container-front">
+            <header>
+                <h2>Generate your QR code</h2>
+                <h3>Adjust the settings below to make your QR code look as you want</h3>
+            </header>
+
+            <div>
+            <div class="setting">
+                <label for="data">Text/URL</label>
+                <span class="sub-label">Include text or a URL you want the QR code to lead to</span>
+                <input type="text" name="data" id="data" min="1" max="900">
+            </div>
+
+            <div class="colors">
+                 <div class="setting">
+                    <label for="color">Main Color</label>
+                    <input type="color" id="color" value="#000000">
+                    <span class="sub-label" id="color-value">#000000</span>
+                 </div>
+            </div>
+           
+           <div class="colors">
+                 <div class="setting">
+                    <label for="color">Background Color</label>
+                    <input type="color" id="color" value="#c7c7c7">
+                    <span class="sub-label" id="color-value">#c7c7c7</span>
+                 </div>
+            </div> 
+
+            </div>
+
+        </section>
+    </main>
+
     <script src="./app.js"></script>
 </body>
 </html>
